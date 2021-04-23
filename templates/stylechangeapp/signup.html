@@ -1,0 +1,20 @@
+{% extends 'stylechangeapp/base.html' %}
+{% block content %}
+  <h2 class="signup-title">サインアップ</h2>
+  <form method="post">
+    {% csrf_token %}
+    {% for field in form %}
+        {{ field }}
+        {% if field.help_text %}
+        {% endif %}
+        {% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+      </p>
+    {% endfor %}
+    <div class="signup-bottun">
+      <button type="submit" class="btn btn-outline-primary">Signup</button>  
+    </div>
+    <a href="{% url 'top' %}" class="signup-back">戻る</a>
+  </form>
+{% endblock %}

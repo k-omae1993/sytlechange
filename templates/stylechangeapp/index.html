@@ -1,0 +1,67 @@
+{% extends 'stylechangeapp/base.html' %}
+{% load static%}
+{% block content %}
+ <div class="container" style="margin-top: 20px;">
+   <form  method="POST" class="form" enctype="multipart/form-data">
+     {% csrf_token %}
+     {{ form.as_p }}
+     <p class="choice-style"><span class="kome">※</span>下記の画像からスタイルの画像を選択して下さい。</p>
+     <div class="style-frame">
+      <ul class="image_list">
+        <li>
+          <div class="image_box">   
+            <img class="thumbnail" id="1" src="{% static 'image/candy.jpg' %}" alt="foo" />
+            <input class="disabled_checkbox" type="checkbox" checked />
+          </div>
+        </li>
+        <li>
+          <div class="image_box">
+            <img class="thumbnail" id="2" src="{% static 'image/mosaic.jpg' %}" alt="foo" />
+            <input class="disabled_checkbox" type="checkbox" checked />
+          </div>
+        </li>
+        <li>
+          <div class="image_box">
+            <img class="thumbnail" id="3" src="{% static 'image/irasuto.jpg' %}" alt="foo" />
+            <input class="disabled_checkbox" type="checkbox" checked />
+          </div>
+        </li>
+        <li>
+          <div class="image_box">
+            <img class="thumbnail" id="4" src="{% static 'image/udnie.jpeg' %}" alt="foo" />
+            <input class="disabled_checkbox" type="checkbox" checked />
+          </div>
+        </li>
+      </ul>
+      <ul class="image_list">
+        <li>
+          <div class="image_box">   
+            <img class="thumbnail" id="5" src="{% static 'image/gohho.jpg' %}" alt="foo" />
+            <input class="disabled_checkbox" type="checkbox" checked />
+          </div>
+        </li>
+        <li>
+          <div class="image_box">
+            <img class="thumbnail" id="6" src="{% static 'image/ginga.jpg' %}" alt="foo" />
+            <input class="disabled_checkbox" type="checkbox" checked />
+          </div>
+        </li>
+        <li>
+          <div class="image_box">
+            <img class="thumbnail" id="7" src="{% static 'image/pezury.jpg' %}" alt="foo" />
+            <input class="disabled_checkbox" type="checkbox" checked />
+          </div>
+        </li>
+        <li>
+          <div class="image_box">
+            <img class="thumbnail" id="8" src="{% static 'image/hokusai.jpg' %}" alt="foo" />
+            <input class="disabled_checkbox" type="checkbox" checked />
+          </div>
+        </li>
+      </ul>
+     </div>
+     <button id="id" type="submit" name="run_scripts" class="btn btn-success" style=margin-top:20px;>SEND</button>
+   </form>
+ </div>
+
+{% endblock %}
