@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import LoginForm, ImageForm
 from django.contrib.auth.views import LoginView, LogoutView
-from .models import User, StyleImage, ModelFile
+from .models import User, ModelFile
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect, JsonResponse
 from django.urls import reverse_lazy
@@ -11,7 +11,6 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from PIL import Image
 from django.conf import settings
-from model.output import *
 from model import *
 import subprocess
 

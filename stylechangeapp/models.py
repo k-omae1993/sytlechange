@@ -12,11 +12,6 @@ class User(models.Model):
 
 class ModelFile(models.Model):
   content_image = models.ImageField(upload_to='documents/')
-  style_image = models.ImageField(upload_to='documents/')
   result_image = models.ImageField(upload_to='documents/output.jpg')
-
-class StyleImage(models.Model):
-  id = models.AutoField(primary_key=True)
-  style_image = models.ImageField(upload_to='documents/')
 
   
